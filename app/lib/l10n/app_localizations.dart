@@ -101,7 +101,7 @@ abstract class AppLocalizations {
   /// No description provided for @appTitle.
   ///
   /// In es, this message translates to:
-  /// **'Aletheia Studio'**
+  /// **'Aletheia Studio — plataforma de estudio bíblico'**
   String get appTitle;
 
   /// No description provided for @retry.

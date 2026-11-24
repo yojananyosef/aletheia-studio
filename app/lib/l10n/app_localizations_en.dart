@@ -10,7 +10,7 @@ class AppLocalizationsEn extends AppLocalizations {
   AppLocalizationsEn([String locale = 'en']) : super(locale);
 
   @override
-  String get appTitle => 'Aletheia Studio';
+  String get appTitle => 'Aletheia Studio — Bible study platform';
 
   @override
   String get retry => 'Try again';
