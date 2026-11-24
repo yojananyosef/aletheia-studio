@@ -1,6 +1,6 @@
-# app — Cliente Flutter (Aletheia)
+# app — Cliente Flutter (Aletheia Studio)
 
-Aplicación Flutter **para escritorio y web** de Aletheia, con catálogo de recursos desacoplado.
+Aplicación Flutter **para escritorio y web** de Aletheia Studio, con catálogo de recursos desacoplado.
 
 - **Estado:** M0–M6.5 completados y build web publicado. Incluye lector, catálogo local/remoto, búsqueda FTS5 con ámbitos de estudio, morfología, mapas, notas, comparación, Factbook, devocional, las seis herramientas de estudio (Atlas, Cursos, Documentos, Medios, Favoritos y Explorador de Salmos) y persistencia SQLite/IndexedDB.
 - **Requisitos:** Flutter 3.47+ (instalado en `~/.local/share/flutter`), y para Linux desktop:
@@ -24,7 +24,7 @@ flutter run -d chrome
 ## Web
 
 - **Compilación ligera:** `bash tool/build_web_release.sh`. Genera un `pubspec.yaml` temporal con solo mapas, `index.json`, `search.meta.json`, `map_sections.json`, RV1909 y morfología; el resto del catálogo se descarga de [`aletheia-mods`](https://github.com/yojananyosef/aletheia-mods). El resultado queda en `build/web`.
-- **Despliegue:** el workflow de la raíz, `.github/workflows/pages.yml`, publica el build en GitHub Pages en cada push a `main`.
+- **Despliegue:** Vercel publica `build/web` en **<https://studio.johan.cl/>** mediante `vercel-build.sh` en cada push a `main`.
 - **SQLite:** `web/sqlite3.wasm` (757.984 bytes) procede del release `sqlite3-3.7.1`; no se descarga en tiempo de ejecución.
 - **Persistencia:** workspace, notas, favoritos y progreso de Cursos en SQLite (esquema **v5**) sobre IndexedDB (`aletheia_app`). El índice FTS5 se descarga comprimido, se descomprime en memoria al buscar por primera vez y queda en la caché del service worker.
 - **Catálogo:** `lib/catalog/mods_catalog_source.dart` descarga los recursos con progreso y cancelación; `lib/catalog/catalog_asset_source.dart` abstrae assets y HTTP con respaldo local de RV1909/metadatos. En web, el modo `auto` usa el catálogo remoto y cae al núcleo empaquetado si no hay red.
@@ -105,7 +105,7 @@ evaluados sobre el ancho de **ventana** (no hardware):
   reconstruir con `flutter build linux --debug` para relanzar la app.
 - `flutter test test/reader_screens.dart` — herramienta de desarrollo: capturas PNG del lector
   (inicio, índice, historial) en `/tmp/opencode/reader-*.png` para revisión visual.
-- **Web:** no se usa `flutter test --platform chrome` porque el harness no sirve bien los assets del catálogo. La comprobación se hace en Chromium contra `build/web` servido bajo `/aletheia/`: arranque, lector, búsqueda FTS5 remota (`principio` → 436 resultados), `principio BEFORE Verbo` → 4 resultados, morfología sin índice, mapas sin índice, teclado griego/hebreo, apertura de `bll/books/ISA.json.gz`, cancelación/reintento del índice, service worker, recarga offline y consola sin errores.
+- **Web:** no se usa `flutter test --platform chrome` porque el harness no sirve bien los assets del catálogo. La comprobación se hace en Chromium contra `build/web` servido en la raíz: arranque, lector, búsqueda FTS5 remota (`principio` → 436 resultados), `principio BEFORE Verbo` → 4 resultados, morfología sin índice, mapas sin índice, teclado griego/hebreo, apertura de `bll/books/ISA.json.gz`, cancelación/reintento del índice, service worker, recarga offline y consola sin errores.
 
 ## Funcionalidad M1 (lector)
 

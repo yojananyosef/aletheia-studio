@@ -90,7 +90,7 @@ jobs:
           cp -r build/linux/x64/release/bundle/* "${stage}/"
           cp ../NOTICE.md "${stage}/NOTICE.md" 2>/dev/null || true
           cat > "${stage}/README.txt" <<'EOF'
-          Aletheia — lector bíblico de escritorio (Linux x64)
+          Aletheia Studio — plataforma de estudio bíblico (Linux x64)
 
           Ejecución:
             ./aletheia
@@ -121,7 +121,7 @@ jobs:
           Copy-Item -Path build/windows/x64/runner/Release/* -Destination $stage -Recurse
           Copy-Item ../NOTICE.md $stage/ -ErrorAction SilentlyContinue
           @'
-          Aletheia — lector bíblico de escritorio (Windows x64)
+          Aletheia Studio — plataforma de estudio bíblico (Windows x64)
 
           Ejecución:
             aletheia.exe
@@ -155,7 +155,7 @@ jobs:
           cp -R build/macos/Build/Products/Release/aletheia.app "${stage}/"
           cp ../NOTICE.md "${stage}/NOTICE.md" 2>/dev/null || true
           cat > "${stage}/README.txt" <<'EOF'
-          Aletheia — lector bíblico de escritorio (macOS arm64, Apple Silicon)
+          Aletheia Studio — plataforma de estudio bíblico (macOS arm64, Apple Silicon)
 
           Ejecución:
             doble clic en Aletheia.app
@@ -199,7 +199,7 @@ jobs:
       - name: Publicar
         uses: softprops/action-gh-release@v2
         with:
-          name: Aletheia ${{ github.ref_name }}
+          name: Aletheia Studio ${{ github.ref_name }}
           body: |
             Binarios de escritorio construidos en CI desde esta misma etiqueta
             con Flutter ${{ env.FLUTTER_VERSION }} tras pasar `flutter analyze`

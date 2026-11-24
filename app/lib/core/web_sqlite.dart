@@ -6,7 +6,7 @@ WasmSqlite3? _instance;
 ///
 /// El archivo se copia desde el release de `package:sqlite3` a `web/` y se
 /// sirve junto a la aplicación. La ruta es relativa al documento para que
-/// funcione tanto en la raíz como bajo `/aletheia/` en GitHub Pages.
+/// funcione tanto en la raíz como bajo un subdirectorio.
 Future<WasmSqlite3> loadWebSqlite() async {
   final existing = _instance;
   if (existing != null) return existing;

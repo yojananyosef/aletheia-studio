@@ -10,7 +10,7 @@ class AppLocalizationsEs extends AppLocalizations {
   AppLocalizationsEs([String locale = 'es']) : super(locale);
 
   @override
-  String get appTitle => 'Aletheia';
+  String get appTitle => 'Aletheia Studio';
 
   @override
   String get retry => 'Reintentar';
@@ -22,7 +22,7 @@ class AppLocalizationsEs extends AppLocalizations {
   String get cancel => 'Cancelar';
 
   @override
-  String get bannerDev => 'Aletheia · catálogo bíblico de dominio público';
+  String get bannerDev => 'Aletheia Studio · plataforma de estudio bíblico';
 
   @override
   String get bannerOpenLibrary => 'Abrir Biblioteca';

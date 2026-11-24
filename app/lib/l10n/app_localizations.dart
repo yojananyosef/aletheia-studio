@@ -101,7 +101,7 @@ abstract class AppLocalizations {
   /// No description provided for @appTitle.
   ///
   /// In es, this message translates to:
-  /// **'Aletheia'**
+  /// **'Aletheia Studio'**
   String get appTitle;
 
   /// No description provided for @retry.
@@ -125,7 +125,7 @@ abstract class AppLocalizations {
   /// No description provided for @bannerDev.
   ///
   /// In es, this message translates to:
-  /// **'Aletheia · catálogo bíblico de dominio público'**
+  /// **'Aletheia Studio · plataforma de estudio bíblico'**
   String get bannerDev;
 
   /// No description provided for @bannerOpenLibrary.

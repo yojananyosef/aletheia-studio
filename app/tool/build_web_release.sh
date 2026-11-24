@@ -55,9 +55,11 @@ if [[ -n "${ALETHEIA_MODS_URL:-}" ]]; then
   DEFINES+=("--dart-define=ALETHEIA_MODS_URL=${ALETHEIA_MODS_URL}")
 fi
 
+BASE_HREF="${ALETHEIA_BASE_HREF:-/}"
+
 flutter build web \
   --release \
-  --base-href /aletheia/ \
+  --base-href "$BASE_HREF" \
   --no-web-resources-cdn \
   --pwa-strategy=none \
   "${DEFINES[@]}"
@@ -81,7 +83,7 @@ def add(relative: str) -> None:
         return
     if relative == "":
         # La URL raíz del ámbito también debe estar en caché: una navegación
-        # offline a /aletheia/ no coincide con /aletheia/index.html.
+        # offline a / no coincide con /index.html.
         seen.add(relative)
         selected.append(relative)
         return
@@ -179,5 +181,3 @@ index.write_text(text, encoding="utf-8")
 print(f"Service worker: versión de actualización {version}")
 PY
 
-# GitHub Pages no debe procesar el sitio con Jekyll.
-touch build/web/.nojekyll

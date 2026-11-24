@@ -1,10 +1,10 @@
 {
   "@@locale": "en",
-  "appTitle": "Aletheia",
+  "appTitle": "Aletheia Studio",
   "retry": "Try again",
   "close": "Close",
   "cancel": "Cancel",
-  "bannerDev": "Aletheia · public-domain Bible catalog",
+  "bannerDev": "Aletheia Studio · Bible study platform",
   "bannerOpenLibrary": "Open Library",
   "bannerClose": "Close banner",
   "navHome": "Home",

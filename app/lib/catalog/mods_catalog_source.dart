@@ -1,6 +1,6 @@
 /// Cliente del catálogo estático publicado en `aletheia-mods`.
 ///
-/// GitHub Pages sirve los archivos con CORS y `Accept-Ranges`, así que la app
+/// El catálogo se sirve con CORS y `Accept-Ranges`, así que la app
 /// web puede descargar un recurso o el índice FTS5 directamente. El service
 /// worker de `web/sw.js` se encarga de cachear las respuestas entre sesiones;
 /// este cliente solo informa del progreso y permite cancelar.
