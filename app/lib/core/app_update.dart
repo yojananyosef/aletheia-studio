@@ -15,7 +15,7 @@ import 'app_version.dart';
 class AppUpdateChecker {
   AppUpdateChecker({
     http.Client? client,
-    this.repository = 'yojananyosef/aletheia',
+    this.repository = 'yojananyosef/aletheia-studio',
     this.currentVersion = kAppVersion,
   }) : _client = client ?? http.Client();
 
