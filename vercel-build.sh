@@ -21,6 +21,10 @@ if [[ ! -x "$FLUTTER_ROOT/bin/flutter" ]]; then
 fi
 
 export PATH="$FLUTTER_ROOT/bin:$PATH"
+
+# El build de Vercel corre como root y el SDK descargado conserva otro
+# propietario; Git lo rechaza al consultar la versión de Flutter.
+git config --global --add safe.directory "$FLUTTER_ROOT"
 flutter config --no-analytics >/dev/null 2>&1 || true
 
 cd "$(dirname "$0")/app"
